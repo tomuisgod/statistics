@@ -23,3 +23,8 @@ ggplot(data = data_str, aes(x=t, y=oil, group=1)) +
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank()) +
   ggtitle("Oil price")
+
+stargazer(data_str, type = "text", title = "Descriptive statistics", 
+          digit = 3, flip = true)
+
+apply(data_str[,-1], 2, sd)
